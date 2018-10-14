@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\CoursesManagement.Domain\CoursesManagement.Domain.csproj" />
+    <ProjectReference Include="..\CoursesManagement.Domain\CoursesManagement.Domain.csproj" />
   </ItemGroup>
   <PropertyGroup>
     <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
