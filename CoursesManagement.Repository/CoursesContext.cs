@@ -15,10 +15,6 @@ namespace CoursesManagement.Repository
 
         public DbSet<Course> Courses { get; set; }
 
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    base.OnConfiguring(optionsBuilder);
-        //    optionsBuilder.UseMySql(System.Configuration.ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString);
-        //}
+        public DbSet<Grade> Grades { get; set; }
     }
 }
