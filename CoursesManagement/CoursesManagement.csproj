@@ -29,6 +29,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CoursesManagement.Repository\CoursesManagement.Repository.csproj" />
+    <ProjectReference Include="..\CoursesManagement.Services\CoursesManagement.Services.csproj" />
   </ItemGroup>
 
   <ItemGroup>

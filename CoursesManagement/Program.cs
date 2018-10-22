@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.IO;
+using CoursesManagement.Services;
 
 namespace CoursesManagement
 {
@@ -24,11 +25,13 @@ namespace CoursesManagement
 
             var db = new CoursesContext(optionsBuilder.Options);
 
+            var coursesService = new CourseService(db);
+
             var teacher = new Teacher() { Name = "Aarón" };
 
             var course = new Course() { Name = "NET Amaris", Teacher = teacher };
 
-            db.Courses.Add(course);
+            coursesService.AddCourse(course).GetAwaiter().GetResult();
 
             db.SaveChanges();
 

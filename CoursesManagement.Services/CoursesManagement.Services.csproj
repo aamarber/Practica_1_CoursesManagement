@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CoursesManagement.Domain\CoursesManagement.Domain.csproj" />
+    <ProjectReference Include="..\CoursesManagement.Repository\CoursesManagement.Repository.csproj" />
+  </ItemGroup>
+
+</Project>
