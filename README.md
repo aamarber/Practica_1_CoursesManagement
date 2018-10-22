@@ -1,2 +1,2 @@
-# Practica_1_CoursesManagement
+# Práctica 1 - CoursesManagement
 Teaching EF Core and NET Core
