@@ -28,7 +28,7 @@ namespace CoursesManagement.Services
             var course = await context.Courses.FindAsync(courseId).ConfigureAwait(false);
             context.Courses.Remove(course);
 
-            return true;
+            return await context.SaveChangesAsync() > 0;
         }
 
         public async Task<Course> GetCourse(int courseId)
@@ -54,6 +54,8 @@ namespace CoursesManagement.Services
         public async Task<Course> UpdateCourse(Course course)
         {
             context.Courses.Update(course);
+
+            await context.SaveChangesAsync();
 
             return course;
         }
