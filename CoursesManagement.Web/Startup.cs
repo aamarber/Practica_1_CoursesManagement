@@ -38,13 +38,11 @@ namespace CoursesManagement.Web
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            services.AddDbContextPool<CoursesContext>(
-                options => options.UseMySql("Server=localhost;Database=CourseManagement;Uid=root;Pwd=root",
-                    mysqlOptions =>
-                    {
-                        //mysqlOptions.ServerVersion(new Version(5, 7, 17), ServerType.MySql); // replace with your Server Version and Type
-                    }
-            ));
+            var section = Configuration.GetSection("Courses");
+
+            var connectionString = section.GetValue<string>("ConnectionString");
+            
+            services.AddDbContextPool<CoursesContext>(options => options.UseMySql(connectionString));
 
             services.AddScoped<ICourseService, CourseService>();
         }
