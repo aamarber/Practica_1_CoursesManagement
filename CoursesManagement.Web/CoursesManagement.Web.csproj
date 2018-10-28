@@ -7,6 +7,12 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.1.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CoursesManagement.Repository\CoursesManagement.Repository.csproj" />
+    <ProjectReference Include="..\CoursesManagement.Services\CoursesManagement.Services.csproj" />
   </ItemGroup>
 
 </Project>

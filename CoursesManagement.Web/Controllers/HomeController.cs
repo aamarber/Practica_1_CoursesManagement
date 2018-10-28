@@ -5,11 +5,19 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using CoursesManagement.Web.Models;
+using CoursesManagement.Services;
 
 namespace CoursesManagement.Web.Controllers
 {
     public class HomeController : Controller
     {
+        private ICourseService courseService;
+
+        public HomeController(ICourseService courseService)
+        {
+            this.courseService = courseService;
+        }
+
         public IActionResult Index()
         {
             return View();
