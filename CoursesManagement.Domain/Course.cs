@@ -7,6 +7,8 @@ namespace CoursesManagement.Domain
         public Course()
         {
             Students = new List<Student>();
+
+            Grades = new List<Grade>();
         }
 
         public int Id { get; set; }
@@ -16,5 +18,7 @@ namespace CoursesManagement.Domain
         public virtual Teacher Teacher { get; set; }
 
         public virtual IList<Student> Students { get; set; }
+
+        public virtual IList<Grade> Grades { get; set; }
     }
 }
