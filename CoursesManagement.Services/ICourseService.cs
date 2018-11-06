@@ -14,6 +14,8 @@ namespace CoursesManagement.Services
 
         Task<Course> GetCourse(int courseId);
 
+        Task<IEnumerable<Course>> GetCourses();
+
         Task<IEnumerable<Course>> GetCoursesByName(string name);
 
         Task<Grade> GetStudentGrade(int courseId, int studentId);

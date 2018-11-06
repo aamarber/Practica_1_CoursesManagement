@@ -4,11 +4,11 @@
     {
         public int Id { get; set; }
 
-        public Course Course { get; set; }
+        public virtual Course Course { get; set; }
 
-        public Teacher Teacher { get; set; }
+        public virtual Teacher Teacher { get; set; }
 
-        public Student Student { get; set; }
+        public virtual Student Student { get; set; }
 
         public decimal Value { get; set; }
     }

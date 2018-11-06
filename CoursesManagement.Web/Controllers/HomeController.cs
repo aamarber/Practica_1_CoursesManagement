@@ -18,23 +18,18 @@ namespace CoursesManagement.Web.Controllers
             this.courseService = courseService;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var courses = await this.courseService.GetCourses();
+
+            return View(courses);
         }
 
-        public IActionResult About()
+        public async Task<IActionResult> Detail(int id)
         {
-            ViewData["Message"] = "Your application description modified 2 page.";
+            var course = await this.courseService.GetCourse(id);
 
-            return View();
-        }
-
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
+            return View(course);
         }
 
         public IActionResult Privacy()

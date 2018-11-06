@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using CoursesManagement.Domain;
 using CoursesManagement.Repository;
+using Microsoft.EntityFrameworkCore;
 
 namespace CoursesManagement.Services
 {
@@ -33,7 +34,12 @@ namespace CoursesManagement.Services
 
         public async Task<Course> GetCourse(int courseId)
         {
-            return await context.Courses.FindAsync(courseId).ConfigureAwait(false);
+            return await context.Courses.Include(x => x.Students).Include(x => x.Teacher).Include(x => x.Grades).SingleOrDefaultAsync(x => x.Id == courseId).ConfigureAwait(false);
+        }
+
+        public async Task<IEnumerable<Course>> GetCourses()
+        {
+            return context.Courses.AsEnumerable();
         }
 
         public async Task<IEnumerable<Course>> GetCoursesByName(string name)

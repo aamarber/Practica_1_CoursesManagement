@@ -1,0 +1,22 @@
+﻿@model CoursesManagement.Domain.Course
+@{
+    ViewBag.Title = $"Course {Model.Name}";
+}
+
+<h2>Grades list for @Model.Name graded by @Model.Teacher?.Name</h2>
+<table class="table">
+    <thead>
+        <th>Student</th>
+        <th>Grade</th>
+    </thead>
+    <tbody>
+        @foreach (var grade in Model.Grades)
+        {
+            <tr>
+                <td>@grade?.Student?.Name</td>
+                <td>@grade.Value</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
